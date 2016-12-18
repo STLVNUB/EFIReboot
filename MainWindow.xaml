@@ -30,7 +30,7 @@
                       BorderThickness="1"
                       Icon="appicon.ico"
                       WindowStartupLocation="CenterScreen"
-                      Title="EFI REBOOT" Height="350" Width="550">
+                      Title="EFIReboot" Height="350" Width="550">
     <Controls:MetroWindow.Resources>
         <ResourceDictionary>
             <ContextMenu  x:Key="RowMenu" DataContext="{Binding PlacementTarget.DataContext, RelativeSource={RelativeSource Self}}">
@@ -76,10 +76,10 @@
             </i:EventTrigger>
         </i:Interaction.Triggers>
         <DataGrid.Columns>
-            <DataGridTextColumn Header="Id" Binding="{Binding Path=Id}" />
-            <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" />
-            <DataGridTextColumn Header="Status" Binding="{Binding Path=Status}" />
-            <DataGridTextColumn Header="Internal name" Binding="{Binding Path=InternalName}" />
+            <DataGridTextColumn Header="ID" Binding="{Binding Path=Id}" />
+            <DataGridTextColumn Header="NAME" Binding="{Binding Path=Name}" />
+            <DataGridTextColumn Header="STATUS" Binding="{Binding Path=Status}" />
+            <DataGridTextColumn Header="INTERNAL NAME" Binding="{Binding Path=InternalName}" />
         </DataGrid.Columns>
     </DataGrid>
 </Controls:MetroWindow>

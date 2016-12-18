@@ -6,11 +6,11 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("EFIReboot")]
-[assembly: AssemblyDescription("A simple tool to reboot to specified EFI boot entry")]
+[assembly: AssemblyDescription("A simple tool to reboot to a specified EFI boot entry")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("GoldRenard")]
 [assembly: AssemblyProduct("EFIReboot")]
-[assembly: AssemblyCopyright("GoldRenard ©  2015")]
+[assembly: AssemblyCopyright("GoldRenard ©2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

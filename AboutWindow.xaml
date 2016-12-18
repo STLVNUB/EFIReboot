@@ -30,7 +30,7 @@
                       Icon="appicon.ico"
                       ResizeMode="NoResize"
                       WindowStartupLocation="CenterOwner"
-                      Title="About EFI REBOOT" Height="225" Width="400">
+                      Title="About EFIReboot" Height="225" Width="400">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -39,9 +39,9 @@
         </Grid.ColumnDefinitions>
         <Image Source="appicon.ico" Height="80" Stretch="Uniform" />
         <StackPanel Grid.Column="1" Margin="5">
-            <Label Content="EFI Reboot" FontWeight="Bold" FontSize="22" HorizontalAlignment="Center" />
-            <TextBlock x:Name="VersionBlock" Text="Version X" HorizontalAlignment="Center" Margin="0,-10,0,0" />
-            <TextBlock Text="A simple tool that allows to reboot directly to specified EFI boot entry (using BootNext EFI variable)" TextWrapping="Wrap" Margin="0,10,0,0" />
+            <Label Content="EFIReboot" FontWeight="Bold" FontSize="22" HorizontalAlignment="Center" />
+            <TextBlock x:Name="VersionBlock" Text="Version 1.0.0" HorizontalAlignment="Center" Margin="0,-10,0,0" />
+            <TextBlock Text="A simple tool that allows to reboot directly to a specified EFI boot entry (using BootNext EFI variable)" TextWrapping="Wrap" Margin="0,10,0,0" />
             <TextBlock Text="Help: Double click on boot entry to reboot or right click to get more options." TextWrapping="Wrap" Margin="0,10,0,0" />
 
             <TextBlock Margin="0,10,0,0" HorizontalAlignment="Center">
