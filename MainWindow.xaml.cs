@@ -59,7 +59,7 @@ namespace EFIReboot {
         }
 
         public void OnCreateShortcut(object sender, BootEntryEventArgs e) {
-            string message = string.Format("Do you want to create shortcut to {0} WITHOUT reboot confirmation?", e.BootEntry);
+            string message = string.Format("Do you want to create a shortcut to {0} WITHOUT reboot confirmation?", e.BootEntry.Name);
             bool hasConfirmation = MessageBoxResult.Yes != MessageBox.Show(message, "Reboot confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();

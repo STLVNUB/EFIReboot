@@ -31,11 +31,12 @@ namespace EFIReboot {
 
         public AboutWindow() {
             InitializeComponent();
+            UpdateVersionText();
         }
 
-        private void UpdataVersionText() {
+        private void UpdateVersionText() {
             Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
-            VersionBlock.Text = string.Format("Version: {1}.{2} (build {3})", version.Major, version.Minor, version.Build);
+            VersionBlock.Text = string.Format("Version {0}.{1}.{2}.{3}", version.Major, version.Minor, version.Build, version.Revision);
         }
 
         private void OnRequestNavigate(object sender, RequestNavigateEventArgs e) {
