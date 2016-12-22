@@ -60,8 +60,12 @@ namespace EFIReboot {
 
         public void OnCreateShortcut(object sender, BootEntryEventArgs e) {
             string message = string.Format("Do you want to create a shortcut to {0} WITHOUT reboot confirmation?", e.BootEntry.Name);
-            bool hasConfirmation = MessageBoxResult.Yes != MessageBox.Show(message, "Reboot confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
-
+            var status = MessageBox.Show(message, "Reboot confirmation", MessageBoxButton.YesNoCancel, MessageBoxImage.Question, MessageBoxResult.Cancel);
+            
+            if (status == MessageBoxResult.Cancel)
+            {
+                return;
+            }
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.FileName = string.Join(string.Empty, e.BootEntry.Name.Split(Path.GetInvalidFileNameChars()));
             saveFileDialog.Filter = "Shortcut (*.lnk)|*.lnk";
@@ -71,7 +75,14 @@ namespace EFIReboot {
                     shortcut.WorkingDirectory = Path.GetDirectoryName(shortcut.Target);
                     shortcut.Description = string.Format("Boot to {0}", e.BootEntry.Name);
                     shortcut.DisplayMode = ShellLink.LinkDisplayMode.edmNormal;
-                    shortcut.Arguments = string.Format(hasConfirmation ? "{0}" : "{0} quiet", e.BootEntry.Id);
+                    if (status == MessageBoxResult.Yes)
+                    {
+                        shortcut.Arguments = string.Format("{0} quiet", e.BootEntry.Id);
+                    }
+                    else
+                    {
+                        shortcut.Arguments = string.Format("{0}", e.BootEntry.Id);
+                    }   
                     shortcut.Save(saveFileDialog.FileName);
                 }
             }
